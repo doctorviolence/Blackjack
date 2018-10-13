@@ -1,5 +1,4 @@
 ﻿using Xunit;
-using Blackjack;
 
 namespace Blackjack.Tests
 {
@@ -9,7 +8,6 @@ namespace Blackjack.Tests
         public void WhenFirstDealt_ThenStartWith2Cards()
         {
             // Arrange
-            Hand hand = new Hand();
             
             // Act
             

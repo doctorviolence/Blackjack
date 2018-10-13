@@ -4,7 +4,7 @@ namespace Blackjack
 {
     public abstract class Player
     {
-        private Hand Hand { get; set; }
+        public Hand Hand { get; set; }
 
         public abstract bool IsDealer();
 
