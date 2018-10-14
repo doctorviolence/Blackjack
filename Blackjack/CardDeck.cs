@@ -10,7 +10,7 @@
         }
 
         // Note that this is an unneccesary convoluted solution to initialize the card deck
-        // Code below represents my 3rd solution (practicing different implementations) to getting four of a kind in the card deck
+        // Code below represents my 3rd solution (practicing different implementations) for getting four of a kind in the card deck
         private void InitializeCardDeck()
         {
             for (int i = 0; i < _cards.Length; i++)
@@ -22,8 +22,8 @@
         private Card CreateNewCard()
         {
             Card card = new Card();
-            int value = card.Value.GetValueOrDefault();
-            bool isFourOfAKind = CheckOccurenceOfCard(value);
+            int? value = card.Value;
+            bool isFourOfAKind = CheckOccurenceOfCard(value.GetValueOrDefault());
 
             if (isFourOfAKind)
             {
@@ -39,7 +39,7 @@
 
             for (int i = 0; i < _cards.Length; i++)
             {
-                if (_cards[i] != null && value == _cards[i].Value.GetValueOrDefault())
+                if (_cards[i] != null && value == _cards[i].Value)
                 {
                     occurence++;
                 }

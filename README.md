@@ -1,7 +1,7 @@
 Blackjack
 ----
 
-Practice TDD project
+Practice TDD/OOP project.
 
 
 Usage

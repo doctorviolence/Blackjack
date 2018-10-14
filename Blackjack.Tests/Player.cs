@@ -2,7 +2,7 @@
 
 namespace Blackjack.Tests
 {
-    public class Player
+    public class PlayerTest
     {
         [Fact]
         public void WhenUserIsInitialized_ReturnCorrectType()

@@ -3,12 +3,12 @@ using Xunit;
 
 namespace Blackjack.Tests
 {
-    public class Card
+    public class CardTest
     {
         [Fact]
         public void WhenInitialized_ReturnValue()
         {
-            Blackjack.Card card = new Blackjack.Card();
+            Card card = new Card();
 
             int value = card.Value.GetValueOrDefault();
 
@@ -18,17 +18,17 @@ namespace Blackjack.Tests
         [Fact]
         public void WhenInitialized_ReturnValueBetween1And13()
         {
-            Blackjack.Card card = new Blackjack.Card();
+            Card card = new Card();
 
             int value = card.Value.GetValueOrDefault();
 
-            Assert.InRange(value, 1, 14);
+            Assert.InRange(value, 2, 14);
         }
 
         [Fact]
         public void WhenInitialized_ReturnValueIsValid()
         {
-            Blackjack.Card card = new Blackjack.Card();
+            Card card = new Card();
 
             bool isValid = card.IsCardValid();
 
@@ -38,7 +38,7 @@ namespace Blackjack.Tests
         [Fact]
         public void WhenSettingValue_ReturnExpected()
         {
-            Blackjack.Card card = new Blackjack.Card();
+            Card card = new Card();
 
             card.Value = 4;
 
@@ -48,7 +48,7 @@ namespace Blackjack.Tests
         [Fact]
         public void WhenSettingInvalidValue_ThrowArgumentOutOfRangeException()
         {
-            Blackjack.Card card = new Blackjack.Card();
+            Card card = new Card();
 
             try
             {

@@ -2,14 +2,14 @@
 
 namespace Blackjack.Tests
 {
-    public class CardDeck
+    public class CardDeckTest
     {
         [Fact]
         public void WhenInitialized_CardDeckContains52Cards()
         {
-            Blackjack.CardDeck deck = new Blackjack.CardDeck();
+            CardDeck deck = new CardDeck();
 
-            Blackjack.Card[] cards = deck.Cards;
+            Card[] cards = deck.Cards;
 
             Assert.NotEmpty(cards);
             Assert.Equal(cards.Length, 52);
@@ -18,11 +18,11 @@ namespace Blackjack.Tests
         [Fact]
         public void WhenInitialized_SingleCardContainsValidNumber()
         {
-            Blackjack.CardDeck deck = new Blackjack.CardDeck();
+            CardDeck deck = new CardDeck();
 
-            Blackjack.Card[] cards = deck.Cards;
+            Card[] cards = deck.Cards;
 
-            foreach (Blackjack.Card c in cards)
+            foreach (Card c in cards)
             {
                 var valid = c.IsCardValid();
                 Assert.True(valid);
@@ -45,13 +45,13 @@ namespace Blackjack.Tests
         [InlineData(13)]
         public void WhenInitialized_CardDeckContains4CardsOfEachValue(int value)
         {
-            Blackjack.CardDeck deck = new Blackjack.CardDeck();
+            CardDeck deck = new CardDeck();
 
-            Blackjack.Card[] cards = deck.Cards;
+            Card[] cards = deck.Cards;
 
             int i = 0;
 
-            foreach (Blackjack.Card c in cards)
+            foreach (Card c in cards)
             {
                 if (value == c.Value)
                     i++;

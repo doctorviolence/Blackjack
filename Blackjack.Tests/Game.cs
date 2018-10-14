@@ -3,13 +3,13 @@ using Xunit;
 
 namespace Blackjack.Tests
 {
-    public class Game
+    public class GameTest
     {
         [Fact]
         public void WhenInitialized_GameContainsCardDeck()
         {
-            Blackjack.CardDeck deck = new Blackjack.CardDeck();
-            Blackjack.Game game = new Blackjack.Game(deck);
+            CardDeck deck = new CardDeck();
+            Game game = new Game(deck);
 
             Assert.NotNull(game.CardDeck);
         }
@@ -17,10 +17,10 @@ namespace Blackjack.Tests
         [Fact]
         public void WhenInitialized_GameContains1Dealer()
         {
-            Blackjack.CardDeck deck = new Blackjack.CardDeck();
-            Blackjack.Game game = new Blackjack.Game(deck);
+            CardDeck deck = new CardDeck();
+            Game game = new Game(deck);
 
-            IList<Blackjack.Player> players = game.Players;
+            List<Player> players = game.Players;
 
             Assert.Equal(players.Count, 1);
         }
@@ -28,14 +28,14 @@ namespace Blackjack.Tests
         [Fact]
         public void When1PlayerAdded_ThenReturn2TotalPlayers()
         {
-            Blackjack.CardDeck deck = new Blackjack.CardDeck();
-            Blackjack.Game game = new Blackjack.Game(deck);
+            CardDeck deck = new CardDeck();
+            Game game = new Game(deck);
 
             User user = new User();
 
             game.AddPlayer(user);
 
-            IList<Blackjack.Player> players = game.Players;
+            List<Player> players = game.Players;
 
             // Note that a dealer is always initialized in the game
             Assert.Equal(players.Count, 2);
@@ -44,8 +44,8 @@ namespace Blackjack.Tests
         [Fact]
         public void WhenGameStartsWith2Players_ThenThereAre48CardsLeft()
         {
-            Blackjack.CardDeck deck = new Blackjack.CardDeck();
-            Blackjack.Game game = new Blackjack.Game(deck);
+            CardDeck deck = new CardDeck();
+            Game game = new Game(deck);
             User user = new User();
             game.AddPlayer(user);
 
@@ -63,11 +63,11 @@ namespace Blackjack.Tests
         [InlineData(4)]
         public void WhenPlayerRequests2Cards_ThenReturnExpectedTotalNumberOfCards(int value)
         {
-            Blackjack.CardDeck deck = new Blackjack.CardDeck();
-            Blackjack.Game game = new Blackjack.Game(deck);
+            CardDeck deck = new CardDeck();
+            Game game = new Game(deck);
 
             game.StartGame();
-            Blackjack.Player p = game.Players[0];
+            Player p = game.Players[0];
 
             int total = 2;
 
@@ -85,8 +85,8 @@ namespace Blackjack.Tests
         [Fact]
         public void WhenAnotherDealerAdded_ThenThrowAddPlayerException()
         {
-            Blackjack.CardDeck deck = new Blackjack.CardDeck();
-            Blackjack.Game game = new Blackjack.Game(deck);
+            CardDeck deck = new CardDeck();
+            Game game = new Game(deck);
 
             Dealer dealer = new Dealer();
 
