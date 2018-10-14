@@ -22,7 +22,7 @@ namespace Blackjack.Tests
 
             List<Player> players = game.Players;
 
-            Assert.Equal(players.Count, 1);
+            Assert.Equal(1, players.Count);
         }
 
         [Fact]
@@ -38,7 +38,7 @@ namespace Blackjack.Tests
             List<Player> players = game.Players;
 
             // Note that a dealer is always initialized in the game
-            Assert.Equal(players.Count, 2);
+            Assert.Equal(2, players.Count);
         }
 
         [Fact]
@@ -53,7 +53,7 @@ namespace Blackjack.Tests
 
             int cards = game.Cards.Count;
 
-            Assert.Equal(cards, 48);
+            Assert.Equal(48, cards);
         }
 
         [Theory]
@@ -79,7 +79,7 @@ namespace Blackjack.Tests
 
             int cards = p.Hand.Cards.Count;
 
-            Assert.Equal(cards, total);
+            Assert.Equal(total, cards);
         }
 
         [Fact]

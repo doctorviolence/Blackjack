@@ -12,7 +12,7 @@ namespace Blackjack.Tests
             Card[] cards = deck.Cards;
 
             Assert.NotEmpty(cards);
-            Assert.Equal(cards.Length, 52);
+            Assert.Equal(52, cards.Length);
         }
 
         [Fact]
@@ -57,7 +57,7 @@ namespace Blackjack.Tests
                     i++;
             }
 
-            Assert.Equal(i, 4);
+            Assert.Equal(4, i);
         }
     }
 }

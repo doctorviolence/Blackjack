@@ -47,9 +47,12 @@ namespace Blackjack
             return score.GetValueOrDefault();
         }
 
-        public bool Stay { get; set; }
+        public bool IsBust()
+        {
+            return Score > 21;
+        }
 
-        public bool Bust { get; set; }
+        public bool Stay { get; set; }
 
         public int Score
         {

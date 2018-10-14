@@ -42,7 +42,7 @@ namespace Blackjack.Tests
 
             card.Value = 4;
 
-            Assert.Equal(card.Value, 4);
+            Assert.Equal(4, card.Value);
         }
 
         [Fact]
